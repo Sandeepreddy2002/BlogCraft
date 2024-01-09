@@ -1,24 +1,26 @@
-import fs from 'fs/promises'
-const DB_PATH = new URL('../db.json', import.meta.url).pathname;
+import fs from 'node:fs/promises'
 
-export const getDB = async ()=>{
-     const data = JSON.parse(await fs.readFile(DB_PATH, 'utf-8'));
-     return data;
+import { fileURLToPath } from 'url';
+
+const DB_PATH = fileURLToPath(new URL('../db.json', import.meta.url));
+
+
+// console.log(DB_PATH);
+export const getDB = async () => {
+  const db = await fs.readFile(DB_PATH, 'utf-8')
+  console.log(db);
+  return JSON.parse(db)
 }
 
 
 export const saveDB = async (db) => {
-    await fs.writeFile(DB_PATH, JSON.stringify(db,null,2),'utf-8');
-    return db;
+  await fs.writeFile(DB_PATH, JSON.stringify(db, null, 2))
+  return db
 }
 
-export const insert =async (note)=>{
-    const db  =await getDB();
-    db.note.push(note);
-    await saveDB(db);
-    return note;
+export const insert = async (data) => {
+  const db = await getDB()
+  db.notes.push(data)
+  await saveDB(db)
+  return data 
 }
-
-
-
-
