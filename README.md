@@ -6,17 +6,19 @@ A simple command-line and web-based note-taking application using Node.js, Yargs
 
 ## Installation
 
-1. Clone the repository:
+##1. Clone the repository:
 
    ```bash
    git clone https://github.com/Sandeepreddy2002/Node-Note-Taker.git
-Navigate to the project directory:
 
+##Navigate to the project directory:
 
+```bash
 cd Node-Note-Taker
 
-Install dependencies:
+##Install dependencies:
 
+```bash
 npm install
 Usage
 1. Adding a New Note
