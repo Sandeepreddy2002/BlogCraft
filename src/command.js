@@ -1,4 +1,5 @@
 import yargs from 'yargs'
+import express from 'express'
 import { hideBin } from 'yargs/helpers'
 import {newNote, getAllNotes, findNotes, removeNote, removeAllNotes} from './notes.js'
 
@@ -61,6 +62,19 @@ yargs(hideBin(process.argv))
         type: 'number'
       })
   }, async (argv) => {
+    const app = express();
+    const port = argv.port || 3000;
+    app.get('/getnotes',async (req,res)=>{
+      const notes =await getAllNotes();
+      res.json({
+        notes
+      },null,2);
+    })
+
+    app.listen(port,()=>{
+      console.log('server is running');
+    });
+
     
   })
   .command('clean', 'remove all notes', () => {}, async (argv) => {
