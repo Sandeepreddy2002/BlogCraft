@@ -18,30 +18,42 @@ cd Node-Note-Taker
 Use code with caution. Learn more
 Install dependencies:
 
-Bash
+```Bash
 npm install
-
+```
 ## Usage
 
 ### Commands
 
-- Adding a New Note: 
+- Adding a New Note:
+  ```bash
   note new "Note content"
+  ```
 
 - Viewing All Notes:
+ ```bash
   note all
+```
   
 - Finding Notes:
+   ```bash
   note find "keyword"
+   ```
   
 - Removing a Note:
+   ```bash
   note remove 1
+   ```
   
 - Launching the Web Interface:
+   ```bash
   note web [--port 3000]
+   ```
 
 - Cleaning Up Notes:
+  ```bash
   note clean
+   ```
 
 
 
