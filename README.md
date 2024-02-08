@@ -3,7 +3,7 @@
 ## Overview
 
 A simple command-line and web-based note-taking application.
-Built using Node.js, Yargs, and Express.
+Built using Node.js, npm, and Express.
 ## Installation
 
 Clone the repository:
